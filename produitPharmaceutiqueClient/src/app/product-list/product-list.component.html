@@ -1,0 +1,43 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by name or code"
+          [(ngModel)]="searchtext"/>
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"type="button"(click)="searchbyname()">Search
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>list Products</h1>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>code</th>
+                    <th>price</th>
+                    <th>date</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{product.name}}</td>
+                    <td>{{product.code}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.validityDate | date : 'yyyy-MM-dd'}}</td>
+            
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
